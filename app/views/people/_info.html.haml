@@ -1,0 +1,43 @@
+
+%center
+  %table.table.table-hover
+    %thead{:style => "background-color: #d0eafb;"}
+      %tr
+        %th
+          %center First Name
+        %th
+          %center Last Name
+        %th
+          %center User Name
+        %th
+          %center Phone Number
+        %th
+          %center DOB
+        %th
+          %center Email
+        %th
+          %center Gender
+        %th
+          %center Status
+    %tbody
+      %tr
+        %td
+          %center= @person.f_name.capitalize
+        %td
+          %center= @person.l_name.capitalize
+        %td
+          %center= @person.username
+        %td
+          %center= @person.phone_number
+        %td
+          %center= @person.date_of_birth
+        %td
+          %center= @person.email
+        %td
+          %center= @person.gender
+        %td
+          %center
+            = button_tag "#{@person.enabled? ? 'Enabled' : 'Disabled'}",
+              class: "enabled select-actions-#{@person.id} btn btn-outline-success #{@person.enabled? ? 'btn btn-outline-success' : 'btn btn-outline-danger'}",
+              data: { id: @person.id }, disabled: true
+%hr{:style => "background-color:#d0eafb; height:1px;"}/

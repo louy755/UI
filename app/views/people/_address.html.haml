@@ -1,0 +1,23 @@
+%center
+  %table.table.table-hover
+    %thead{:style => "background-color: #d0eafb;"}
+      %tr
+        %th
+          %center SER
+        %th
+          %center Street Number
+        %th
+          %center City
+        %th
+          %center State
+    - @person.addresses.each do |address|
+      %tbody
+        %tr
+          %td
+            %center= address.id
+          %td
+            %center= address.street_number.titleize
+          %td
+            %center= address.city.capitalize
+          %td
+            %center= address.state.capitalize

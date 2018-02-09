@@ -1,0 +1,33 @@
+-if current_user
+  .page-header{ :style => 'margin-bottom: 50px;' }
+  .row
+    .col-md-4{'min-height': '300px'}
+      %center
+        %h2
+          .lo
+            %span{:style => "color: #0e6ba4;font-weight:bold"}= full_name.upcase
+            %hr{:style => "background-color:#d0eafb; height:1px;lineheight:0;"}/
+      %center{'min-height': '300px'}
+        = image_tag("#{@person.male? ? 'male1.png' : 'female1.png'}", height: '175px', width: '175px', id: "zom")
+        %br/
+        %span{:style => "color: #0e6ba4;font-weight:bold"}= @person.username
+    .col-md-8
+      %center
+        %h2
+          %span{:style => "color: #0e6ba4;font-weight:bold"}= @person.username.upcase + "'S"
+          Profile
+      %hr{:style => "background-color:#d0eafb; height:1px;lineheight:0;"}/
+      %br
+      = @person.profile.file
+  %center
+    %h3
+      %br
+      = link_to (image_tag('info9.gif',  height: 'auto', width: 'auto')), "#", id: "info-link"
+  %section#info-section
+    = render "info"
+  %center
+    %h3
+      = link_to (image_tag('address9.gif',  height: 'auto', width: 'auto')), "#", id: "address-link"
+
+  %section#address-section
+    = render 'address'

@@ -1,0 +1,19 @@
+var value = $(".select-actions-<%= @person.id %>");
+
+<% flash.each do |name, msg| %>
+  $('.flash-messages').html('<div class="alert alert-<%= name %> alert-dismissible" data-dismiss="alert"><%= msg %></div')
+<% end %>
+
+<% if @person.enabled? %>
+  value.html('Enabled')
+  value.removeClass('btn btn-outline-danger')
+  value.addClass('btn btn-outline-success')
+<% else %>
+  value.html('Disabled')
+  value.removeClass('btn btn-outline-success')
+  value.addClass('btn btn-outline-danger')
+<% end %>
+
+setTimeout(function() {
+  $('.alert').slideUp();
+}, 3000);

@@ -1,0 +1,16 @@
+
+%nav.navbar.navbar-expand-lg{:style => "background-color: #000000;"}
+  = link_to (image_tag('gblogo.gif',  height: 'auto', width: 'auto')), root_path, class: "navbar-brand"
+  #navbarNavDropdown.collapse.navbar-collapse
+  - if current_user
+    %ul.navbar-nav
+    %ul.navbar-nav
+      %li.nav-item.dropdown
+        %a#navbarDropdownMenuLink.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#"}
+          %span{:style => "color: #e8f5fd;font-weight:bold"}= current_user.name.upcase
+        .dropdown-menu{"aria-labelledby" => "navbarDropdownMenuLink"}
+          = link_to 'Sign out', users_sessions_destroy_path, method: :delete, class: "dropdown-item"
+  - else
+    %ul.navbar-nav
+      %li.nav-item.dropdown
+        = link_to 'Sign In', user_azure_oauth2_omniauth_authorize_path, style: "color: #e8f5fd;font-weight:bold", class: "dropdown-item.btn-primary"

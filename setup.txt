@@ -1,0 +1,7 @@
+Hello there this small UI demonstration, It was must task.
+First create PG DB and add the info to config/database.yml.
+migrate your database and then use rails db:setup to load the seed data.
+100,00 people
+200,000 addresses
+100,000 profile .
+Enjoy the show.

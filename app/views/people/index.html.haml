@@ -1,0 +1,21 @@
+-if current_user
+  .flash-messages
+  = form_for_filterrific @filterrific do |f|
+    .container{:style => "background-color:   #e6f2ff; height:100px;"}
+      .row
+        .col-sm
+          %label Search
+          = f.text_field :search_query,
+                         :class => 'filterrific-periodically-observed form-control'
+        .col-sm
+          %label DOB
+          = f.text_field :with_date_of_birth,
+                         :class => 'js-datepicker form-control'
+        .col-sm
+          %label Gender
+          = f.select :with_gender, options_for_select(["All", "Male", "Female"]), {},
+                     :class => 'select-box form-control'
+
+  #filterrific_results
+    = render :partial => 'people/list',
+             :locals => { :people => @people }

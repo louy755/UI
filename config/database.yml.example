@@ -1,0 +1,7 @@
+development:
+  adapter: ''
+  encoding: ''
+  database: ''
+  username: ''
+  password: ''
+  host: ''

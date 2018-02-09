@@ -1,0 +1,50 @@
+.d-flex{:style => "background-color:   #e6f2ff; height:60px;"}
+  .p-2= render_filterrific_spinner
+  .p-2= page_entries_info people, :model => 'person'
+  #mo.ml-auto.p-2= link_to "Reset Filters", reset_filterrific_url, :class => 'btn btn-outline-dark btn-sm', id: "zam"
+
+%table.table.table-hover
+  %tr{:style => "background-color:    #b3d9ff;"}
+    %center
+      %th
+        %center SER
+      %th
+        %center First Name
+      %th
+        %center Last Name
+      %th
+        %center DOB
+      %th
+        %center Phone
+      %th
+        %center email
+      %th
+        %center Gender
+      %th
+        %center Show
+      %th
+        %center Status
+  - @people.each do |person|
+    %tr
+      %td
+        %center= person.id
+      %td
+        %center= person.f_name
+      %td
+        %center= person.l_name
+      %td
+        %center= person.date_of_birth
+      %td
+        %center= person.phone_number
+      %td
+        %center= person.email
+      %td
+        %center= person.gender
+      %td
+        %center= link_to image_tag("#{person.male? ? 'male1.png' : 'female1.png'}",height: '30px', width: '30px', class: "zen"), person_path(person)
+      %td
+        %center= button_tag "#{person.enabled? ? 'Enabled' : 'Disabled'}",class: "enabled select-actions-#{person.id} btn btn-outline-success #{person.enabled? ? 'btn btn-outline-success' : 'btn btn-outline-danger'}",data: { id: person.id }
+
+%center
+  .digg_pagination
+    = will_paginate @people, :container => false
