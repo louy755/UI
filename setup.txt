@@ -5,3 +5,20 @@ migrate your database and then use rails db:setup to load the seed data.
 200,000 addresses
 100,000 profile .
 Enjoy the show.
+Please run this command in your terminal to generate the aboute for each prfile:
+Profile.where(id: 1..100000).update(file: ' Its important to take it a step further
+and tailor your curriculum vitae so it stands out from the crowd and so the content
+reflects your audience  the organization and the department that you want to work for
+The job description and your own research of the department you are applying to will tell
+you the primary qualifications and especially the work capabilities the hiring committee
+is seeking in its new member
+Has this department traditionally valued publication over teaching when it makes tenure and
+promotion decisions If so then you should describe your publications before listing your
+professional teaching experience If however you are applying to a community college that
+prides itself on the quality of its instruction your teaching accomplishments should have pride
+of place In this case the experience section in reverse chronological order should proceed your
+publications section
+The following curriculum vitae format will give you an example of what to include in your
+academic CV and shows the appropriate format for a curriculum vitae Also see below for an example
+of a curriculum vitae written for academia In this example you can see how the phrases the first
+and the second help the reader follow the organization of the ideas in the paragraph ')
