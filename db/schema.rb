@@ -12,14 +12,11 @@
 
 ActiveRecord::Schema.define(version: 20180209071502) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "addresses", force: :cascade do |t|
     t.string "street_number"
     t.string "city"
     t.string "state"
-    t.bigint "person_id"
+    t.integer "person_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["person_id"], name: "index_addresses_on_person_id"
@@ -40,7 +37,7 @@ ActiveRecord::Schema.define(version: 20180209071502) do
 
   create_table "profiles", force: :cascade do |t|
     t.string "picture"
-    t.bigint "person_id"
+    t.integer "person_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "file"
@@ -58,8 +55,8 @@ ActiveRecord::Schema.define(version: 20180209071502) do
     t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.inet "current_sign_in_ip"
-    t.inet "last_sign_in_ip"
+    t.integer "current_sign_in_ip"
+    t.integer "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
@@ -67,6 +64,4 @@ ActiveRecord::Schema.define(version: 20180209071502) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "addresses", "people"
-  add_foreign_key "profiles", "people"
 end

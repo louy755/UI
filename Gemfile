@@ -13,7 +13,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
-gem "pg", "~> 0.18"
+gem 'sqlite3'
 gem 'faker'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
